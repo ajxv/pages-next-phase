@@ -1,15 +1,11 @@
 import * as React from 'react';
-import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import { useState } from 'react';
-import InputAdornment from '@mui/material/InputAdornment';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { CheckCircle, Person } from '@mui/icons-material'
-import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import axios from 'axios'
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -101,7 +97,6 @@ export default function LoginRegCard() {
   const [registerUsername, setRegisterUsername] = useState('');
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
-  const [registrationSubmitError, setRegistrationSubmitError] = useState(false)
 
   const registerUser = (username, email, password) => {
 
@@ -120,10 +115,6 @@ export default function LoginRegCard() {
   const handleRegistrationSubmit = (event) => {
     event.preventDefault()
     registerUser(registerUsername, registerEmail, registerPassword)
-  }
-
-  const handleRegistrationError = () => {
-    setRegistrationSubmitError(true)
   }
 
 
