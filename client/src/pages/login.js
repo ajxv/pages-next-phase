@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import CustomAppBar from '../components/appBar';
+import CustomAppBar from '../components/customAppBar';
 import LoginRegCard from '../components/loginRegCard';
 
 export default function Login() {

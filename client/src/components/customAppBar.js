@@ -4,24 +4,16 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-// import IconButton from '@mui/material/IconButton';
 import { Description } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
-
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-
-
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-// import Avatar from '@mui/material/Avatar';
-// import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-// import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['ProcessPages', 'Pdf2Excel', 'Login', 'test'];
-// const settings = ['Login', 'Register'];
 
 export default function CustomAppBar() {
     const darkTheme = createTheme({
@@ -34,40 +26,15 @@ export default function CustomAppBar() {
       });
   
       const [anchorElNav, setAnchorElNav] = React.useState(null);
-  // const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
-
   return (
-    // <Box sx={{ flexGrow: 1 }}>
-    //     <ThemeProvider theme={darkTheme}>
-    //         <AppBar position="static">
-    //             <Toolbar>
-    //                 <Description sx={{m: 2}}/>
-    //                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-    //                     PagesNextPhase
-    //                 </Typography>
-    //                 <But<Description sx={{m: 2}}/>ton color="inherit">ProcessPages</Button>
-    //                 <Button color="inherit">Pdf2Excel</Button>
-    //                 <Button color="inherit">Login</Button>
-    //                 <Button color="inherit">Register</Button>
-    //             </Toolbar>
-    //         </AppBar>
-    //     </ThemeProvider>
-    // </Box>
     <ThemeProvider theme={darkTheme}>
     <AppBar position="static">
       <Container maxWidth="xxl">
@@ -148,7 +115,7 @@ export default function CustomAppBar() {
           >
             PagesNextPhase
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end'}}>
             {pages.map((page) => (
               <Link to={`/${page}`} style={{ textDecoration: 'none' }}>
                 <Button
@@ -161,36 +128,6 @@ export default function CustomAppBar() {
               </Link>
             ))}
           </Box>
-
-          {/* <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="User" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
