@@ -119,7 +119,7 @@ export default function LoginRegCard() {
 
 
   return (
-    <Card elevation={5} sx={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', paddingTop: '1em', height: 'auto', width: { md: 380, xs: 300 }, borderRadius: '1em' }}>
+    <Card elevation={5} sx={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', paddingTop: '1em', height: 'auto', width: { md: 380, xs: 300 }, minWidth: 300, borderRadius: '1em' }}>
     <TabContext value={value}>
       <TabList onChange={handleChange} aria-label="tabs" centered>
         <Tab label="Login" value="1" />
